@@ -9,3 +9,9 @@ Deno.test("RectangleAdapter adapts Quadratic as a Rectangular object", () => {
   assertEquals(Calculator.getPerimeter(adapted), 12);
   assertEquals(Calculator.getDiagonal(adapted), Math.sqrt(18));
 });
+
+Deno.test("getWidthHeightRatio returns 1.0 for squares", () => {
+  const square = new Square(5);
+  const adapted = new RectangleAdapter(square);
+  assertEquals(Calculator.getWidthHeightRatio(adapted), 1.0);
+});
